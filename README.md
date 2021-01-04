@@ -1,6 +1,6 @@
-# makersbnb
+# MakersBnB
 
-Description
+## Description
 
 MakersBnB is a website where users can find places to stay and book them. Users can also list places too. A membership is required to access features.
 
