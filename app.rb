@@ -4,6 +4,7 @@ require 'sinatra/base'
 
 class MakersBnB < Sinatra::Base
   get '/' do
-    p 'Hello World'
+    erb :index
   end
 end
+
