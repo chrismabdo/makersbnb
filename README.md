@@ -4,7 +4,7 @@ Description
 
 MakersBnB is a website where users can find places to stay and book them. Users can also list places too. A membership is required to access features.
 
-User Stories
+## User Stories
 
 As a user
 In order to access features
@@ -52,11 +52,11 @@ Someone else should be able to send a request for the same dates
 
 
 
-Classes
+## Classes
 User
 Space
 
-Methods
+## Methods
 	Request
 	Show Listings
 	Sign Up
@@ -65,11 +65,11 @@ Methods
 
 Who owns this?
 
-User
+### User
 Sign up
 
 
-Space
+### Space
 New Listing
 Show Listings
 Request
