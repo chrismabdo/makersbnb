@@ -1,6 +1,10 @@
 <ul><% @spaces.each do |space| %>
   <li>Name: <%= space.name %> Description: <%= space.description %> Price per night: <%= space.price %></li>
+  <form action='/send_request' method='post'>
+      <input type='submit' value='Request Listing'>
+  </form>
    <% end %>
+  
 </ul>
 
 <form action='/add-listing'>
