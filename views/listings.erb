@@ -1,1 +1,8 @@
-<%= @spaces %>
+<ul><% @spaces.each do |space| %>
+  <li>Name: <%= space.name %> Description: <%= space.description %> Price per night: <%= space.price %></li>
+   <% end %>
+</ul>
+
+<form action='/add-listing'>
+  <input type='submit' value='Add New Listing'>
+</form>

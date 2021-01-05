@@ -4,7 +4,7 @@ require 'sinatra/base'
 require './lib/space.rb'
 
 class MakersBnB < Sinatra::Base
-  enable :sessions 
+  enable :sessions
 
   get '/' do
     p 'Hello World'
@@ -15,11 +15,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/add-listing' do
-    'Castle'
+    Space.new_listing(params[:name], params[:description], params[:price])
+
+    redirect '/listings'
   end
 
   get '/listings' do
     @spaces = Space.show_listings
+
     erb :'listings'
   end
 

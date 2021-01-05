@@ -1,7 +1,8 @@
 feature 'user can add a new listing' do
   scenario 'add new listing' do
 
-    visit '/add-listing'
+    visit '/listings'
+    click_button 'Add New Listing'
 
     within('form') do
       fill_in 'name', with: 'Castle'
