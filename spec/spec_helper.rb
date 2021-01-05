@@ -1,5 +1,5 @@
 
-ENV['RACK_ENV'] = test
+ENV['RACK_ENV'] = 'test'
 
 require_relative '../app.rb'
 require 'capybara'
@@ -8,10 +8,17 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'pg'
+require_relative '../database_connection_setup.rb'
+require 'database_connection'
+require_relative './spec_spec_spec'
 
 Capybara.app = MakersBnB
 
 RSpec.configure do |config|
+
+  config.after(:each) do
+    clear_table
+  end
   
   config.expect_with :rspec do |expectations|
    
@@ -30,10 +37,4 @@ RSpec.configure do |config|
     config.default_formatter = "doc"
   end
 
-  config.profile_examples = 10
-
-  config.order = :random
-
-  Kernel.srand config.seed
-=end
 end
