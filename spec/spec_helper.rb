@@ -11,7 +11,7 @@ require 'simplecov-console'
 require 'pg'
 require_relative '../database_connection_setup.rb'
 require 'database_connection'
-require_relative './spec_spec_spec'
+require_relative '../clear_tables.rb'
 
 RSpec.configure do |config|
   config.before(:each) do
