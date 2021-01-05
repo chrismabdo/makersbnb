@@ -9,10 +9,13 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'pg'
+require_relative '../database_connection_setup.rb'
+require 'database_connection'
+require_relative './spec_spec_spec'
 
 RSpec.configure do |config|
   config.before(:each) do
-    setup_test_database
+    clear_table
   end
 end
 
