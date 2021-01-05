@@ -42,4 +42,13 @@ class MakersBnB < Sinatra::Base
 
     erb :listings
   end
+
+  post '/send_request' do
+        
+    redirect '/confirm_request'
+  end
+
+  get '/confirm_request' do
+    erb :confirm_request
+  end
 end

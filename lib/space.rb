@@ -26,4 +26,7 @@ class Space
   def self.new_listing(name, description, price, user_id)
     DatabaseConnection.query("INSERT INTO spaces (name, description, price, user_id) VALUES ('#{name}', '#{description}', '#{price}', '#{user_id}');")
   end
+
+  def self.request(space_id, owner_id, guest_id)
+  end
 end

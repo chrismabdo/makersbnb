@@ -23,4 +23,23 @@ describe Space do
       expect(result[0]['user_id']).to eq '1'
     end
   end
+
+  describe '.request' do
+    it 'responds to request class method' do
+      expect(Space).to respond_to :request
+    end
+
+    it 'records details of a users request' do
+      User.create('AJ', 'aj@example.com', 'password')
+      User.create('Chris', 'chris@example.com', 'password')
+      Space.new_listing('Cave', 'small cave', '£2.00', '1')
+      Space.request('1','1','2')
+      connection = PG.connect(dbname: 'makersbnb_test')
+      result = connection.exec('SELECT * FROM requests;')
+
+      expect(result[0]['space_id']).to eq '1'
+      expect(result[0]['owner_id']).to eq '1'
+      expect(result[0]['guest_id']).to eq '2'
+    end
+  end
 end

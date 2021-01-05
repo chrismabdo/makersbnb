@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>Code coverage for Week5</title>
+    <title>Code coverage for Makersbnb</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.12.3/application.js' type='text/javascript'></script>
     <link href='./assets/0.12.3/application.css' media='screen, projection, print' rel='stylesheet' type='text/css' />
@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-05T14:55:26+00:00">2021-01-05T14:55:26+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-05T16:31:28+00:00">2021-01-05T16:31:28+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  97.78%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.38
+         1.26
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>7</b> files in total.
+    <b>9</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>78</b> relevant lines,
-    <span class="green"><b>78</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>135</b> relevant lines,
+    <span class="green"><b>132</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  97.78%
 </span>
 )
   </div>
@@ -71,7 +71,18 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#4293efc800f564d8faf97c77036fb1c65d7fe16c" class="src_link" title="spec/features/checking_existing_users_spec.rb">spec/features/checking_existing_users_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#2d85792279f58c0ce7ffacac084f54c0eafbb38f" class="src_link" title="spec/adding_listing_helper.rb">spec/adding_listing_helper.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.88</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#a8d611ab3f352e70dba9e73110a1176e4ec54019" class="src_link" title="spec/features/checking_existing_users_spec.rb">spec/features/checking_existing_users_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">18</td>
             <td class="cell--number">13</td>
@@ -82,18 +93,18 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#5076e02b4b7de2577c60ba4958245048be671608" class="src_link" title="spec/features/sign_up_spec.rb">spec/features/sign_up_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="strong t-file__name"><a href="#42950b73c3f5ab688021724c02d191281d9dd856" class="src_link" title="spec/features/making_requests_spec.rb">spec/features/making_requests_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">95.24 %</td>
+            <td class="cell--number">31</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">0.95</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#79ab822accce20d5496dc3c9c5e9e40661a06b26" class="src_link" title="spec/features_one/new_listing_spec.rb">spec/features_one/new_listing_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#e1583df840e7a1acfa40613b9cba17e0b7e8aa96" class="src_link" title="spec/features/new_listing_spec.rb">spec/features/new_listing_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">22</td>
             <td class="cell--number">16</td>
@@ -104,7 +115,7 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#818bc9b92156092e7be285639f6283d62f5cd231" class="src_link" title="spec/features_one/show_listing_spec.rb">spec/features_one/show_listing_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#4f2a58de9ec8c9c31db6d8f6ad2dbb76d4d0ebcf" class="src_link" title="spec/features/show_listing_spec.rb">spec/features/show_listing_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">12</td>
             <td class="cell--number">9</td>
@@ -115,29 +126,40 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#ed4861dff8770e343634737bb260ef74bdc3dc22" class="src_link" title="spec/space_spec.rb">spec/space_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#7fa9e339156596c37b46d86834d0bdc9e41f8aa7" class="src_link" title="spec/features/sign_up_spec.rb">spec/features/sign_up_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">26</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">16</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#be0fa02eebf22eb8a00f0bd4ede5097f5803af99" class="src_link" title="spec/spec_spec_spec.rb">spec/spec_spec_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#dd571b996e4eba9fcfdc4b6d0b86c2b46567beef" class="src_link" title="spec/signing_up_helper.rb">spec/signing_up_helper.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">14</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">5.29</td>
+            <td class="cell--number">2.71</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#1eef00db1deaa0d46ae6ec45e9ffe23fee4995c8" class="src_link" title="spec/user_spec.rb">spec/user_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#407d5447eb1f743534865295b9bb2e65b39ce267" class="src_link" title="spec/space_spec.rb">spec/space_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">93.10 %</td>
+            <td class="cell--number">45</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0.93</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#a466dfe472ebc025c94f1d32f77f42bb84c3a141" class="src_link" title="spec/user_spec.rb">spec/user_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">15</td>
             <td class="cell--number">9</td>
@@ -164,7 +186,247 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="4293efc800f564d8faf97c77036fb1c65d7fe16c">
+        <div class="source_table" id="2d85792279f58c0ce7ffacac084f54c0eafbb38f">
+  <div class="header">
+    <h3>spec/adding_listing_helper.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">def add_listing_1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="2">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  visit &#39;/listings&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="3">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  click_button &#39;Add New Listing&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="4">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;name&#39;, with: &#39;Castle&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="5">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;description&#39;, with: &#39;modest castle on hill&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="6">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;price&#39;, with: &#39;£50.00&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;user_id&#39;, with: &#39;1&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="8">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  click_button &#39;Create New Listing&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">def add_listing_2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  visit &#39;/listings&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  click_button &#39;Add New Listing&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;name&#39;, with: &#39;Cave&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;description&#39;, with: &#39;Dark, damp, and horrible cave&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;price&#39;, with: &#39;£5.00&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  fill_in &#39;user_id&#39;, with: &#39;1&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  click_button &#39;Create New Listing&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="a8d611ab3f352e70dba9e73110a1176e4ec54019">
   <div class="header">
     <h3>spec/features/checking_existing_users_spec.rb</h3>
     <h4>
@@ -393,12 +655,12 @@
 </div>
 
       
-        <div class="source_table" id="5076e02b4b7de2577c60ba4958245048be671608">
+        <div class="source_table" id="42950b73c3f5ab688021724c02d191281d9dd856">
   <div class="header">
-    <h3>spec/features/sign_up_spec.rb</h3>
+    <h3>spec/features/making_requests_spec.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  95.24%
 </span>
 
       lines covered
@@ -407,9 +669,9 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>21</b> relevant lines.
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
 
     
@@ -420,18 +682,29 @@
     <ol>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="1">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"># frozen_string_literal: true</code>
+            
+
+            <code class="ruby">require &#39;signing_up_helper.rb&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="2">
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;adding_listing_helper.rb&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
             
             
 
@@ -442,24 +715,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">feature &#39;has a sign up page&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="covered" data-hits="1" data-linenumber="4">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  scenario &#39;able to enter details to sign up&#39; do</code>
+            <code class="ruby">feature &#39;Making requests&#39; do</code>
           </li>
         </div>
       
@@ -470,7 +732,7 @@
 
             
 
-            <code class="ruby">    visit(&#39;/&#39;)</code>
+            <code class="ruby">    scenario &#39;User can make a request next to each listing&#39; do</code>
           </li>
         </div>
       
@@ -481,7 +743,7 @@
 
             
 
-            <code class="ruby">    fill_in &#39;username&#39;, with: &#39;AJ&#39;</code>
+            <code class="ruby">        signing_up_user_1</code>
           </li>
         </div>
       
@@ -492,7 +754,7 @@
 
             
 
-            <code class="ruby">    fill_in &#39;email&#39;, with: &#39;aj@example.com&#39;</code>
+            <code class="ruby">        signing_up_user_2</code>
           </li>
         </div>
       
@@ -503,18 +765,18 @@
 
             
 
-            <code class="ruby">    fill_in &#39;password&#39;, with: &#39;password&#39;</code>
+            <code class="ruby">        add_listing_1</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">    click_button &#39;Sign Up&#39;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -525,7 +787,7 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content &#39;Thanks for signing up to MakersBnB&#39;</code>
+            <code class="ruby">        expect(page).to have_button &#39;Request Listing&#39;</code>
           </li>
         </div>
       
@@ -536,12 +798,221 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    scenario &#39;user gets confirmation once listing has been requested&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      signing_up_user_1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      signing_up_user_2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      add_listing_1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      click_button &#39;Request Listing&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(page).to have_content &#39;Thank you for requesting this space&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    scenario &#39;request button relates to certain listing&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      signing_up_user_1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      signing_up_user_2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      add_listing_1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      add_listing_2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      click_button &#39;Request Listing&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">      expect(page).to have_content &quot;You&#39;ve requested the Cave&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -556,9 +1027,9 @@
 </div>
 
       
-        <div class="source_table" id="79ab822accce20d5496dc3c9c5e9e40661a06b26">
+        <div class="source_table" id="e1583df840e7a1acfa40613b9cba17e0b7e8aa96">
   <div class="header">
-    <h3>spec/features_one/new_listing_spec.rb</h3>
+    <h3>spec/features/new_listing_spec.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -829,9 +1300,9 @@
 </div>
 
       
-        <div class="source_table" id="818bc9b92156092e7be285639f6283d62f5cd231">
+        <div class="source_table" id="4f2a58de9ec8c9c31db6d8f6ad2dbb76d4d0ebcf">
   <div class="header">
-    <h3>spec/features_one/show_listing_spec.rb</h3>
+    <h3>spec/features/show_listing_spec.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -992,9 +1463,9 @@
 </div>
 
       
-        <div class="source_table" id="ed4861dff8770e343634737bb260ef74bdc3dc22">
+        <div class="source_table" id="7fa9e339156596c37b46d86834d0bdc9e41f8aa7">
   <div class="header">
-    <h3>spec/space_spec.rb</h3>
+    <h3>spec/features/sign_up_spec.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -1006,9 +1477,401 @@
     
 
     <div class="t-line-summary">
-      <b>16</b> relevant lines.
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">feature &#39;has a sign up page&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  scenario &#39;able to enter details to sign up&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    visit(&#39;/&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;username&#39;, with: &#39;AJ&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;email&#39;, with: &#39;aj@example.com&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;password&#39;, with: &#39;password&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    click_button &#39;Sign Up&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content &#39;Thanks for signing up to MakersBnB&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="dd571b996e4eba9fcfdc4b6d0b86c2b46567beef">
+  <div class="header">
+    <h3>spec/signing_up_helper.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>14</b> relevant lines.
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">def signing_up_user_1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="2">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    visit(&#39;/&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="3">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;username&#39;, with: &#39;AJ&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="4">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;email&#39;, with: &#39;aj@example.com&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="5">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;password&#39;, with: &#39;password&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="6">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    click_button &#39;Sign Up&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    click_button &#39;Take me home, country roads!&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">def signing_up_user_2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="11">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    visit(&#39;/&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="12">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;username&#39;, with: &#39;Kiki&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="13">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;email&#39;, with: &#39;kiki@example.com&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="14">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &#39;password&#39;, with: &#39;password&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="15">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    click_button &#39;Sign Up&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="16">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    click_button &#39;Take me home, country roads!&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="407d5447eb1f743534865295b9bb2e65b39ce267">
+  <div class="header">
+    <h3>spec/space_spec.rb</h3>
+    <h4>
+      <span class="green">
+  93.1%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>29</b> relevant lines.
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
 
     
@@ -1300,54 +2163,56 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="be0fa02eebf22eb8a00f0bd4ede5097f5803af99">
-  <div class="header">
-    <h3>spec/spec_spec_spec.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>7</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
         <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
+          <li class="covered" data-hits="1" data-linenumber="27">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">require &#39;pg&#39;</code>
+            <code class="ruby">  describe &#39;.request&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="2">
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;responds to request class method&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(Space).to respond_to :request</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -1358,29 +2223,84 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">def clear_table</code>
+            <code class="ruby">    it &#39;records details of a users request&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="4">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  connection = PG.connect(dbname: &#39;makersbnb_test&#39;)</code>
+            <code class="ruby">      User.create(&#39;AJ&#39;, &#39;aj@example.com&#39;, &#39;password&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="34">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      User.create(&#39;Chris&#39;, &#39;chris@example.com&#39;, &#39;password&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      Space.new_listing(&#39;Cave&#39;, &#39;small cave&#39;, &#39;£2.00&#39;, &#39;1&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      Space.request(&#39;1&#39;,&#39;1&#39;,&#39;2&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      connection = PG.connect(dbname: &#39;makersbnb_test&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      result = connection.exec(&#39;SELECT * FROM requests;&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -1391,62 +2311,62 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # Clear the bookmarks table</code>
+            
+
+            <code class="ruby">      expect(result[0][&#39;space_id&#39;]).to eq &#39;1&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="7">
-            <span class="hits">7</span>
+          <li class="missed" data-hits="0" data-linenumber="41">
+            
             
 
             
 
-            <code class="ruby">  result = connection.exec &quot;DROP TABLE spaces&quot;</code>
+            <code class="ruby">      expect(result[0][&#39;owner_id&#39;]).to eq &#39;1&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="8">
-            <span class="hits">7</span>
+          <li class="missed" data-hits="0" data-linenumber="42">
+            
             
 
             
 
-            <code class="ruby">  result = connection.exec &quot;DROP TABLE users&quot;</code>
+            <code class="ruby">      expect(result[0][&#39;guest_id&#39;]).to eq &#39;2&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="9">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="43">
+            
             
 
             
 
-            <code class="ruby">  result = connection.exec &quot;CREATE TABLE users (user_id SERIAL PRIMARY KEY, username VARCHAR(60), user_email VARCHAR(60), user_password VARCHAR(60));&quot;</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="10">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="44">
+            
             
 
             
 
-            <code class="ruby">  result = connection.exec &quot;CREATE TABLE spaces (space_id SERIAL PRIMARY KEY, name VARCHAR(60), description VARCHAR(240), price VARCHAR(60), user_id INTEGER REFERENCES users(user_id));&quot;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 
@@ -1461,7 +2381,7 @@
 </div>
 
       
-        <div class="source_table" id="1eef00db1deaa0d46ae6ec45e9ffe23fee4995c8">
+        <div class="source_table" id="a466dfe472ebc025c94f1d32f77f42bb84c3a141">
   <div class="header">
     <h3>spec/user_spec.rb</h3>
     <h4>
@@ -1505,7 +2425,7 @@
 
             
 
-            <code class="ruby">require &#39;spec_spec_spec&#39;</code>
+            <code class="ruby">require_relative &#39;../clear_tables&#39;</code>
           </li>
         </div>
       

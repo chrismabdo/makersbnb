@@ -1,5 +1,5 @@
 require 'user'
-require 'spec_spec_spec'
+require_relative '../clear_tables'
 
 describe User do
     
