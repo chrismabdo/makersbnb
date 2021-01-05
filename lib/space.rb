@@ -1,35 +1,29 @@
+# frozen_string_literal: true
+
 require 'pg'
+require './lib/user.rb'
+require_relative '../database_connection_setup.rb'
+require './lib/database_connection.rb'
 
 class Space
   attr_accessor :name, :description, :price
 
-  def initialize(name:, description:, price:)
+  def initialize(id:, name:, description:, price:, user_id:)
+    @id = id
     @name = name
     @description = description
     @price = price
+    @user_id = user_id
   end
 
   def self.show_listings
-    if ENV['RACK_ENV'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
-
-    result = connection.exec("SELECT * FROM spaces;")
+    result = DatabaseConnection.query('SELECT * FROM spaces;')
     result.map do |space|
-      Space.new(name: space['name'], description: space['description'], price: space['price'])
+      Space.new(id: space['id'], name: space['name'], description: space['description'], price: space['price'], user_id: space['user_id'])
     end
-
   end
 
-  def self.new_listing(name, description, price)
-    if ENV['RACK_ENV'] == 'test'
-      connection = PG.connect(dbname: 'makersbnb_test')
-    else
-      connection = PG.connect(dbname: 'makersbnb')
-    end
-
-    connection.exec("INSERT INTO spaces (name, description, price) VALUES ('#{name}', '#{description}', '#{price}');")
+  def self.new_listing(name, description, price, user_id)
+    DatabaseConnection.query("INSERT INTO spaces (name, description, price, user_id) VALUES ('#{name}', '#{description}', '#{price}', '#{user_id}');")
   end
 end
