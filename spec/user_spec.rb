@@ -12,4 +12,11 @@ describe User do
         expect(user.id).to eq "1"
 
     end
+
+    it 'checks passsword is correct' do
+        user = User.create("maker101", "password", "maker@example.com")
+    
+        expect(user.check_password("password")).to eq true 
+        expect(user.check_password("2Dogs")).to eq false
+    end 
 end
