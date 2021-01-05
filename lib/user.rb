@@ -26,9 +26,7 @@ class User
   def self.user_check(username)
     @user_check = DatabaseConnection.query("SELECT * FROM users WHERE username='#{username.downcase}';")
     check = @user_check.map do |name|
-        if name = username
-            true
-        end
+        true if name = username
     end
     check[0]
   end
@@ -36,15 +34,8 @@ class User
   def self.email_check(email)
     @email_check = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
     check = @email_check.map do |address|
-          if address = email
-            true
-          end
+        true if address = email
         end
     check[0]
   end
-
-    # email_check.map do |email|
-    #     return email[:user_email].exist?
-    # end
-
 end
