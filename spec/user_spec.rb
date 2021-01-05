@@ -16,7 +16,7 @@ describe User do
     it 'checks passsword is correct' do
         user = User.create("maker101", "password", "maker@example.com")
     
-        expect(user.check_password("password")).to eq true 
-        expect(user.check_password("2Dogs")).to eq false
+        expect(User.check_password("maker@example.com", "password")).to eq true 
+        expect(User.check_password("maker@example.com", "2Dogs")).to eq false
     end 
 end

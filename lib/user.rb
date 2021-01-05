@@ -40,9 +40,15 @@ class User
   end
 
   def self.check_password(email, given_password)
-    @password_check = DatabaseConnection.query("SELECT * FROM users WHERE user_password='#{email}';")
-    check = @password_check.map do |password|
-      true if password = password
+    if email_check(email) == true 
+      @password_check = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
+      if given_password == @password_check[0]['user_password']
+        true
+      else 
+        false
       end
-  check[0]
+    else 
+      false
+    end
+  end
 end
