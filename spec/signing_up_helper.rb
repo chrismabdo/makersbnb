@@ -16,3 +16,10 @@ def signing_up_user_2
     click_button 'Take me home, country roads!'
 end
 
+def signing_up_and_stay_on_page
+    visit('/')
+    fill_in 'username', with: 'AJ'
+    fill_in 'email', with: 'aj@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'Sign Up'
+end

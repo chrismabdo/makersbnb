@@ -2,7 +2,6 @@
 
 require 'user'
 require_relative '../clear_tables'
-require 'spec_spec_spec'
 require 'bcrypt'
 
 describe User do

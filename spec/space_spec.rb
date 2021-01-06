@@ -12,7 +12,7 @@ describe Space do
 
   describe '.new_listing' do
     it 'adds a new listing to spaces' do
-      User.create('AJ', 'aj@example.com', 'password')
+      User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
       Space.new_listing('Cave', 'small cave', '£2.00', '1')
       connection = PG.connect(dbname: 'makersbnb_test')
       result = connection.exec('SELECT * FROM spaces;')
@@ -30,8 +30,8 @@ describe Space do
     end
 
     it 'records details of a users request' do
-      User.create('AJ', 'aj@example.com', 'password')
-      User.create('Chris', 'chris@example.com', 'password')
+      User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+      User.create(username: 'Chris', email: 'chris@example.com', password: 'password')
       Space.new_listing('Cave', 'small cave', '£2.00', '1')
       Space.request('1','2')
       connection = PG.connect(dbname: 'makersbnb_test')
