@@ -55,7 +55,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/add-listing' do
-    Space.new_listing(params[:name], params[:description], params[:price])
+    Space.new_listing(params[:name], params[:description], params[:price], params[:user_id])
     redirect '/listings'
   end
 
@@ -73,4 +73,5 @@ class MakersBnB < Sinatra::Base
     session.clear
     redirect '/listings'
   end
+
 end

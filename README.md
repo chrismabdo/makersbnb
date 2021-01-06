@@ -6,29 +6,29 @@ MakersBnB is a website where users can find places to stay and book them. Users 
 
 ## User Stories
 
-    As a user
-    In order to access features
-    I want to be able to sign up
+   * As a user
+   * In order to access features
+   * I want to be able to sign up
 
     As a user
     In order to access features
     I want to be able to log in and log out
 
-    As a user
-    In order to make dollar
-    I want to list my space
+    * As a user
+    * In order to make dollar
+    * I want to l*ist my space
 
-    As a user
-    In order to book a space
-    I want to show all properties
+    * As a user
+    * In order to book a space
+    * I want to show all properties
 
     As a user
     Because I have MANY properties
     I want to list my whole empire
 
-    As a user
-    So I can advertise my space well
-    I want to name each space, and provide a short description of the space, and a price per night
+    * As a user
+    * So I can advertise my space well
+    * I want to name each space, and provide a short description of the space, and a price per night
 
     As a user
     So other users can see if the space is available
