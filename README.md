@@ -6,37 +6,37 @@ MakersBnB is a website where users can find places to stay and book them. Users 
 
 ## User Stories
 
-   * As a user
-   * In order to access features
-   * I want to be able to sign up
+    As a user
+    In order to access features
+    I want to be able to sign up
 
-    * As a user
-    * In order to access features
-    * I want to be able to log in and log out
+    As a user
+    In order to access features
+    I want to be able to log in and log out
 
-    * As a user
-    * In order to make dollar
-    * I want to l*ist my space
+    As a user
+    In order to make dollar
+    I want to list my space
 
-    * As a user
-    * In order to book a space
-    * I want to show all properties
+    As a user
+    In order to book a space
+    I want to show all properties
 
-    * As a user
-    * Because I have MANY properties
-    * I want to list my whole empire
+    As a user
+    Because I have MANY properties
+    I want to list my whole empire
 
-    * As a user
-    * So I can advertise my space well
-    * I want to name each space, and provide a short description of the space, and a price per night
+    As a user
+    So I can advertise my space well
+    I want to name each space, and provide a short description of the space, and a price per night
 
     As a user
     So other users can see if the space is available
     I want to show available dates (potentially API)
 
-    * As a user
-    * In order to go on vacaaayyyyy
-    * I want to request to stay at someone else’s castle
+    As a user
+    In order to go on vacaaayyyyy
+    I want to request to stay at someone else’s castle
 
     As a user
     In order to let someone stay at my castle
@@ -78,3 +78,8 @@ Space table - space_id, name, description, price, user_id
 
 User table - user_id, username, user_email, user_password
 
+
+Requests
+-------
+request_id | space_id | owner_id | guest_id | dates |
+-----------------------------------------------------

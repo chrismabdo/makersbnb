@@ -1,5 +1,5 @@
 <h1>Welcome To The Booking Page</h1>
-
+<form action='/confirm_request' method='post'>
 <form action='/send_request' method='post'>
   <ul>
     <% @spaces.each do |space| %>
@@ -10,9 +10,13 @@
       <br>
     <% end %>
   </ul>
-  <input type='date' value='dates you want'>
+  Check In:
+  <input type='date' name='check_in'>
+  Check Out:
+  <input type='date' name='check_out'>
   <input type='submit' value='Request Listing'>
 </form>
+ </form>
 
 <form action='/add-listing'>
   <input type='submit' value='Add New Listing'>
