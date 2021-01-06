@@ -6,7 +6,7 @@ require_relative '../database_connection_setup.rb'
 require './lib/database_connection.rb'
 
 class Space
-  attr_accessor :name, :description, :price
+  attr_accessor :id, :name, :description, :price
 
   def initialize(id:, name:, description:, price:, user_id:)
     @id = id
@@ -27,6 +27,7 @@ class Space
     DatabaseConnection.query("INSERT INTO spaces (name, description, price, user_id) VALUES ('#{name}', '#{description}', '#{price}', '#{user_id}');")
   end
 
-  def self.request(space_id, owner_id, guest_id)
+  def self.request(space_id, guest_id)
+    DatabaseConnection.query("INSERT INTO requests (space_id, guest_id) VALUES ('#{space_id}', '#{guest_id}');")
   end
 end

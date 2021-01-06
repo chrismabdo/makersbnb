@@ -1,11 +1,17 @@
+<h1>Welcome To The Booking Page</h1>
+
 <ul><% @spaces.each do |space| %>
   <li>Name: <%= space.name %> Description: <%= space.description %> Price per night: <%= space.price %></li>
-  <form action='/send_request' method='post'>
-      <input type='submit' value='Request Listing'>
-  </form>
+  
    <% end %>
   
 </ul>
+
+<form action='/send_request' method='post'>
+      Please Enter Your ID:<input type='text' name='guest_id' placeholder='Enter ID'>
+      <input type='text' name='space_id' placeholder='Space ID'>
+      <input type='submit' value='Request Listing'>
+  </form>
 
 <form action='/add-listing'>
   <input type='submit' value='Add New Listing'>

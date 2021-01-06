@@ -39,12 +39,12 @@ class MakersBnB < Sinatra::Base
 
   get '/listings' do
     @spaces = Space.show_listings
-
     erb :listings
   end
 
   post '/send_request' do
-        
+    p params
+    Space.request(params[:space_id], params[:guest_id])
     redirect '/confirm_request'
   end
 
