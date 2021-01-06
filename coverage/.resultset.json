@@ -102,6 +102,8 @@
       },
       "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features_one/new_listing_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -132,6 +134,10 @@
       },
       "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features_one/show_listing_spec.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -141,6 +147,8 @@
           1,
           1,
           1,
+          1,
+          null,
           1,
           1,
           null,
@@ -228,6 +236,6 @@
         ]
       }
     },
-    "timestamp": 1609933775
+    "timestamp": 1609940210
   }
 }

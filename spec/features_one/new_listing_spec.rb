@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'user can add a new listing' do
   scenario 'add new listing' do
     visit('/')
