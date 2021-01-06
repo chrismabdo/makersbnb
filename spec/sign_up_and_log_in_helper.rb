@@ -23,3 +23,10 @@ def signing_up_and_stay_on_page
     fill_in 'password', with: 'password'
     click_button 'Sign Up'
 end
+
+def log_in
+    visit('/')
+        fill_in 'login_email', with: 'aj@example.com'
+        fill_in 'login_password', with: 'password'
+        click_button 'Log In'
+end

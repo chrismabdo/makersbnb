@@ -51,27 +51,37 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/add-listing' do
-    erb :'add-listing'
+    if session[:user]
+      erb :'add-listing'
+    else
+      redirect '/'
+    end 
   end
 
   post '/add-listing' do
-    Space.new_listing(params[:name], params[:description], params[:price], params[:user_id])
+    @user = session[:user].id
+    Space.new_listing(params[:name], params[:description], params[:price], @user)
     redirect '/listings'
   end
 
   get '/listings' do
-    @user = if session[:user]
-              session[:user].username
-            else
-              'Stranger'
-            end
+    if session[:user]
+      @user = session[:user].username
+    else
+      @user = 'Stranger'
+    end
     @spaces = Space.show_listings
     erb :listings
   end
 
   post '/send_request' do
-    Space.request(params[:space_id], params[:guest_id])
-    redirect '/confirm_request'
+    if session[:user]
+      @user = session[:user].id
+      Space.request(params[:space_id], @user)
+      redirect '/confirm_request'
+    else
+      redirect '/'
+    end
   end
 
   get '/confirm_request' do
@@ -80,7 +90,7 @@ class MakersBnB < Sinatra::Base
 
   post '/log-out' do
     session.clear
-    redirect '/listings'
+    redirect '/'
   end
 
 end
