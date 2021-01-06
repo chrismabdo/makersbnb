@@ -2,6 +2,7 @@
 
 require_relative '../database_connection_setup.rb'
 require './lib/database_connection.rb'
+require 'bcrypt'
 
 class User
   attr_reader :id, :username, :email, :password
@@ -14,40 +15,36 @@ class User
   end
 
   def self.create(username, password, email)
-    user = DatabaseConnection.query("INSERT INTO users (username, user_password, user_email) VALUES ('#{username.downcase}', '#{password}', '#{email.downcase}') RETURNING user_id, user_email, username, user_password;")
+    encrypted_password = BCrypt::Password.create(password)
+    user = DatabaseConnection.query("INSERT INTO users (username, user_password, user_email) VALUES ('#{username.downcase}', '#{encrypted_password}', '#{email.downcase}') RETURNING user_id, user_email, username, user_password;")
     User.new(id: user[0]['user_id'], username: user[0]['username'], password: user[0]['user_password'], email: user[0]['user_email'])
   end
-
 
   def self.copy_check(username, email)
     false unless user_check(username) == true || email_check(email) == true
   end
 
   def self.user_check(username)
-    @user_check = DatabaseConnection.query("SELECT * FROM users WHERE username='#{username.downcase}';")
-    check = @user_check.map do |name|
-        true if name = username
+    user_check = DatabaseConnection.query("SELECT * FROM users WHERE username='#{username.downcase}';")
+    check = user_check.map do |_name|
+      true if name = username
     end
     check[0]
   end
 
   def self.email_check(email)
-    @email_check = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
-    check = @email_check.map do |address|
-        true if address = email
-        end
+    email_check = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
+    check = email_check.map do |_address|
+      true if address = email
+    end
     check[0]
   end
 
   def self.check_password(email, given_password)
-    if email_check(email) == true 
-      @password_check = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
-      if given_password == @password_check[0]['user_password']
-        true
-      else 
-        false
-      end
-    else 
+    if email_check(email) == true
+      password_check = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
+      BCrypt::Password.new(password_check[0]['user_password']) == given_password
+    else
       false
     end
   end

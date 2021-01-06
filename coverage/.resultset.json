@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/user/Projects/makersbnb/spec/features/check_login_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features/check_login_spec.rb": {
         "lines": [
           1,
           1,
@@ -38,7 +38,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/features/checking_existing_users_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features/checking_existing_users_spec.rb": {
         "lines": [
           1,
           1,
@@ -60,7 +60,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/features/log_out_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features/log_out_spec.rb": {
         "lines": [
           1,
           1,
@@ -84,7 +84,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/features/sign_up_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features/sign_up_spec.rb": {
         "lines": [
           null,
           null,
@@ -100,7 +100,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/features_one/new_listing_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features_one/new_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -130,7 +130,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/features_one/show_listing_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/features_one/show_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -158,7 +158,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/space_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/space_spec.rb": {
         "lines": [
           1,
           null,
@@ -183,7 +183,7 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/spec_spec_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/spec_spec_spec.rb": {
         "lines": [
           1,
           null,
@@ -198,21 +198,24 @@
           null
         ]
       },
-      "/Users/user/Projects/makersbnb/spec/user_spec.rb": {
+      "/Users/aj/Projects/week5/makersbnb/makersbnb/spec/user_spec.rb": {
         "lines": [
-          1,
-          1,
           null,
-          1,
-          null,
-          1,
-          1,
           null,
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -225,6 +228,6 @@
         ]
       }
     },
-    "timestamp": 1609931467
+    "timestamp": 1609933775
   }
 }
