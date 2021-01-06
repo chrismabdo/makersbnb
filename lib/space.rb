@@ -19,15 +19,15 @@ class Space
   def self.show_listings
     result = DatabaseConnection.query('SELECT * FROM spaces;')
     result.map do |space|
-      Space.new(id: space['id'], name: space['name'], description: space['description'], price: space['price'], user_id: space['user_id'])
+      space = Space.new(id: space['space_id'], name: space['name'], description: space['description'], price: space['price'], user_id: space['user_id'])
     end
   end
 
   def self.new_listing(name, description, price, user_id)
-    DatabaseConnection.query("INSERT INTO spaces (name, description, price, user_id) VALUES ('#{name}', '#{description}', '#{price}', '#{user_id}');")
+    DatabaseConnection.query("INSERT INTO spaces (name, description, price, user_id) VALUES ('#{name}', '#{description}', '#{price}', '#{user_id}') RETURNING space_id, name, description, price, user_id;")
   end
 
   def self.request(space_id, guest_id)
-    DatabaseConnection.query("INSERT INTO requests (space_id, guest_id) VALUES ('#{space_id}', '#{guest_id}');")
+    DatabaseConnection.query("INSERT INTO requests (space_id, guest_id) VALUES ('#{space_id}', '#{guest_id}') RETURNING request_id, space_id, guest_id;")
   end
 end

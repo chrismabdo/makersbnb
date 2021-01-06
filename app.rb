@@ -43,7 +43,6 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/send_request' do
-    p params
     Space.request(params[:space_id], params[:guest_id])
     redirect '/confirm_request'
   end

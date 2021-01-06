@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/features/checking_existing_users_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/features/checking_existing_users_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,7 +23,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/features/making_requests_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/features/making_requests_spec.rb": {
         "lines": [
           1,
           1,
@@ -53,6 +53,7 @@
           1,
           1,
           1,
+          null,
           1,
           null,
           1,
@@ -60,7 +61,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/signing_up_helper.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/signing_up_helper.rb": {
         "lines": [
           1,
           2,
@@ -82,7 +83,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/adding_listing_helper.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/adding_listing_helper.rb": {
         "lines": [
           1,
           2,
@@ -105,7 +106,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/features/new_listing_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/features/new_listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -131,7 +132,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/features/show_listing_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/features/show_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -147,7 +148,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/features/sign_up_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/features/sign_up_spec.rb": {
         "lines": [
           null,
           null,
@@ -163,7 +164,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/space_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/space_spec.rb": {
         "lines": [
           null,
           null,
@@ -211,7 +212,7 @@
           null
         ]
       },
-      "/Users/chrisabdo/Desktop/Makers/week_5/makersbnb/spec/user_spec.rb": {
+      "/Users/kikidawson/Desktop/Projects/week-5/makersbnb/spec/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -231,6 +232,6 @@
         ]
       }
     },
-    "timestamp": 1609929982
+    "timestamp": 1609933825
   }
 }
