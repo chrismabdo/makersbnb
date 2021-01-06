@@ -30,4 +30,9 @@ class Space
   def self.request(space_id, guest_id)
     DatabaseConnection.query("INSERT INTO requests (space_id, guest_id) VALUES ('#{space_id}', '#{guest_id}') RETURNING request_id, space_id, guest_id;")
   end
+
+  def self.find(space_id:)
+    result = DatabaseConnection.query("SELECT * FROM spaces WHERE space_id='#{space_id}';")
+    Space.new(id: result[0]['space_id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], user_id: result[0]['user_id'])
+  end
 end
