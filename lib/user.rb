@@ -4,18 +4,18 @@ require_relative '../database_connection_setup.rb'
 require './lib/database_connection.rb'
 
 class User
-  attr_reader :id, :username, :email, :password, :user_check
+  attr_reader :id, :username, :email, :password
 
-  def initialize(id, username, password, email)
+  def initialize(id:, username:, password:, email:)
     @id = id
-    @username = username
+    @username = username.capitalize
     @email = email
     @password = password
   end
 
   def self.create(username, password, email)
     user = DatabaseConnection.query("INSERT INTO users (username, user_password, user_email) VALUES ('#{username.downcase}', '#{password}', '#{email.downcase}') RETURNING user_id, user_email, username, user_password;")
-    User.new(user[0]['user_id'], user[0]['username'], user[0]['user_password'], user[0]['user_email'])
+    User.new(id: user[0]['user_id'], username: user[0]['username'], password: user[0]['user_password'], email: user[0]['user_email'])
   end
 
 
@@ -50,5 +50,10 @@ class User
     else 
       false
     end
+  end
+
+  def self.find(email)
+    result = DatabaseConnection.query("SELECT * FROM users WHERE user_email='#{email.downcase}';")
+    User.new(id: result[0]['user_id'], username: result[0]['username'], email: result[0]['user_email'], password: result[0]['user_password'])
   end
 end

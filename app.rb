@@ -21,6 +21,28 @@ class MakersBnB < Sinatra::Base
     end
   end
 
+  get '/login' do
+    erb :login
+  end
+
+  post '/login_details' do
+    if User.check_password(params[:email], params[:password])
+      session[:user] = User.find(params[:email])
+      redirect '/logged_in'
+    else
+      redirect '/login_failure'
+    end
+  end
+
+  get '/logged_in' do
+    @user = session[:user]
+    erb :homepage
+  end
+
+  get '/login_failure' do
+    erb :login_failure
+  end
+
   get '/sign_up_welcome' do
     erb :sign_up_welcome
   end
