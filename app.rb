@@ -26,8 +26,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/login_details' do
-    if User.check_password(params[:email], params[:password])
-      session[:user] = User.find(params[:email])
+    if User.check_password(params[:login_email], params[:login_password])
+      session[:user] = User.find(params[:login_email])
       redirect '/logged_in'
     else
       redirect '/login_failure'
@@ -62,9 +62,19 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/listings' do
+    if session[:user] 
+      @user = session[:user].username
+    else
+      @user = 'Stranger'
+    end
     @spaces = Space.show_listings
 
     erb :'listings'
   end
 
+  post '/log-out' do
+    session.clear
+
+    redirect '/listings'
+  end
 end

@@ -1,5 +1,15 @@
 feature 'user can add a new listing' do
   scenario 'add new listing' do
+    visit('/')
+    fill_in 'username', with: 'AJ'
+    fill_in 'email', with: 'aj@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'Sign Up'
+
+    visit('/')
+    fill_in 'login_email', with: 'aj@example.com'
+    fill_in 'login_password', with: 'password'
+    click_button 'Log In'
 
     visit '/listings'
     click_button 'Add New Listing'
