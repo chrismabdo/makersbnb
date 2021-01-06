@@ -7,8 +7,13 @@ feature 'user can add a new listing' do
     fill_in 'email', with: 'aj@example.com'
     fill_in 'password', with: 'password'
     click_button 'Sign Up'
-    click_button 'Take me home, country roads!'
-    click_button 'View Listings'
+
+    visit('/')
+    fill_in 'login_email', with: 'aj@example.com'
+    fill_in 'login_password', with: 'password'
+    click_button 'Log In'
+
+    visit '/listings'
     click_button 'Add New Listing'
 
     fill_in 'name', with: 'Castle'
