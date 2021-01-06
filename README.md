@@ -10,9 +10,9 @@ MakersBnB is a website where users can find places to stay and book them. Users 
    * In order to access features
    * I want to be able to sign up
 
-    As a user
-    In order to access features
-    I want to be able to log in and log out
+    * As a user
+    * In order to access features
+    * I want to be able to log in and log out
 
     * As a user
     * In order to make dollar
@@ -22,9 +22,9 @@ MakersBnB is a website where users can find places to stay and book them. Users 
     * In order to book a space
     * I want to show all properties
 
-    As a user
-    Because I have MANY properties
-    I want to list my whole empire
+    * As a user
+    * Because I have MANY properties
+    * I want to list my whole empire
 
     * As a user
     * So I can advertise my space well
@@ -34,9 +34,9 @@ MakersBnB is a website where users can find places to stay and book them. Users 
     So other users can see if the space is available
     I want to show available dates (potentially API)
 
-    As a user
-    In order to go on vacaaayyyyy
-    I want to request to stay at someone else’s castle
+    * As a user
+    * In order to go on vacaaayyyyy
+    * I want to request to stay at someone else’s castle
 
     As a user
     In order to let someone stay at my castle
