@@ -44,11 +44,28 @@ describe Request do
     Space.new_listing('Cave', 'small cave', '£2.00', '1')
     Space.new_listing('Big Cave', 'big cave', '£4.00', '2')
     request = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-01', check_out: '2021-03-07')
-    request_clash = Request.create(space_id: '1', guest_id: '1', check_in: '2021-03-09', check_out: '2021-03-14')
-    request_checking = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-13', check_out: '2021-03-17')
+    request_2 = Request.create(space_id: '1', guest_id: '1', check_in: '2021-03-09', check_out: '2021-03-14')
+    request_3 = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-13', check_out: '2021-03-17')
+    
+    expect(request_3.check_date_availability(space_id: '1', checked_date: '2021-03-13')).to eq false
+    expect(request_3.check_date_availability(space_id: '1', checked_date: '2021-03-20')).to eq true
+    end
 
-    expect(request_checking.check_availability(space_id: '1', checked_date: '2021-03-13')).to eq false
-    expect(request_checking.check_availability(space_id: '1', checked_date: '2021-03-20')).to eq true
+    it 'checks the whole availability for both check in and check out' do
+      User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+    User.create(username: 'Chris', email: 'chris@example.com', password: 'password')
+    Space.new_listing('Cave', 'small cave', '£2.00', '1')
+    Space.new_listing('Big Cave', 'big cave', '£4.00', '2')
+    request = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-01', check_out: '2021-03-07')
+    request_2 = Request.create(space_id: '1', guest_id: '1', check_in: '2021-03-09', check_out: '2021-03-14')
+    request_3 = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-13', check_out: '2021-03-17')
+    request_4 = Request.create(space_id: '1', guest_id: '2', check_in: '2021-02-20', check_out: '2021-03-02')
+    request_5 = Request.new(request_id: '5', space_id: '1', guest_id: '2', check_in: '2021-04-01', check_out: '2021-04-10', confirmed: nil)
+
+    expect(request_3.check_full_availability(space_id: '1', check_in: '2021-03-13', check_out: '2021-03-17')).to eq false
+    expect(request_4.check_full_availability(space_id: '1', check_in: '2021-02-20', check_out: '2021-03-02')).to eq false
+    expect(request_5.check_full_availability(space_id: '1', check_in: '2021-04-01', check_out: '2021-04-10')).to eq true
     end
   end
+
 end

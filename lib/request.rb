@@ -26,7 +26,16 @@ class Request
   #         requests =
   #   end
 
-  def check_availability(space_id:, checked_date:)
+  def check_full_availability(space_id:, check_in:, check_out:)
+    if (check_date_availability(space_id: space_id, checked_date: check_in) == true) && (check_date_availability(space_id: space_id, checked_date: check_out) == true)
+     true
+    else
+      false
+    end
+  end
+
+## add  " AND confirmed=true " to query string once confirmed and rejected features are working
+  def check_date_availability(space_id:, checked_date:)
     dates_query = DatabaseConnection.query("SELECT check_in, check_out FROM requests WHERE space_id=#{space_id};")
     result = dates_query.map do |range|
       if checked_date.between?((range['check_in']),(range['check_out'])) 

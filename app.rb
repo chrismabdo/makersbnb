@@ -56,7 +56,7 @@ class MakersBnB < Sinatra::Base
       erb :'add-listing'
     else
       redirect '/'
-    end
+    end 
   end
 
   post '/add-listing' do
@@ -67,10 +67,10 @@ class MakersBnB < Sinatra::Base
 
   get '/listings' do
     @user = if session[:user]
-              session[:user].username
-            else
-              'Stranger'
-            end
+      session[:user].username
+    else
+      'Stranger'
+    end
     @spaces = Space.show_listings
     erb :listings
   end
