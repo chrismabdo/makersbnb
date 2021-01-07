@@ -27,7 +27,7 @@ feature 'Making requests' do
     scenario 'has available dates on listings' do
         signing_up_user_1
         signing_up_user_2
-        log_in
+        log_in_user_1
         add_listing_1
         add_listing_2
         choose('1')
@@ -35,5 +35,5 @@ feature 'Making requests' do
         expect(page).to have_content "Check Out"
     end
 
-    
+
 end
