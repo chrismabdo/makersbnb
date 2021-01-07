@@ -100,16 +100,24 @@ class MakersBnB < Sinatra::Base
 
   get '/manage_bookings' do
     @user = session[:user]
-    @send_requests = Request.show_sent_requests(user_id: @user.id)
+    @sent_requests = Request.show_sent_requests(user_id: @user.id)
     @recieved_requests = Request.show_recieved_requests(user_id: @user.id)
     erb :manage_bookings
   end
 
   post '/confirm_booking' do
+    Request.confirm(request_id: params[:request_id])
+
     redirect '/manage_bookings'
   end
 
   post '/reject_booking' do
+    Request.reject(request_id: params[:request_id])
+    redirect '/manage_bookings'
+  end
+
+  post '/cancel_booking' do
+    Request.cancel(request_id: params[:request_id])
     redirect '/manage_bookings'
   end
 end

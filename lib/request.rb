@@ -51,4 +51,16 @@ class Request
     result = DatabaseConnection.query("SELECT username FROM users WHERE user_id='#{guest_id}';")
     result[0]['username'].capitalize
   end
+
+  def self.confirm(request_id:)
+    DatabaseConnection.query("UPDATE requests SET confirmed=TRUE WHERE request_id='#{request_id}';")
+  end
+
+  def self.reject(request_id:)
+    DatabaseConnection.query("UPDATE requests SET confirmed=FALSE WHERE request_id='#{request_id}';")
+  end
+
+  def self.cancel(request_id:)
+    DatabaseConnection.query("DELETE FROM requests WHERE request_id='#{request_id}';")
+  end
 end
