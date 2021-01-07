@@ -1,5 +1,8 @@
 # frozen_string_literal: true
+
 require 'sign_up_and_log_in_helper.rb'
+require 'making_requests_helper.rb'
+require 'adding_listing_helper.rb'
 
 ENV['RACK_ENV'] = 'test'
 

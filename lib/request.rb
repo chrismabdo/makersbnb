@@ -5,7 +5,7 @@ require './lib/database_connection.rb'
 require './lib/space.rb'
 
 class Request
-  attr_reader :request_id, :space_id, :guest_id, :check_in, :check_out, :confirmed
+  attr_reader :request_id, :space_id, :guest_id, :check_in, :check_out, :confirmed, :space_name, :guest_name
 
   def initialize(request_id:, space_id:, guest_id:, check_in:, check_out:, confirmed:)
     @request_id = request_id
@@ -14,6 +14,8 @@ class Request
     @check_in = check_in
     @check_out = check_out
     @confirmed = confirmed
+    @space_name = Space.find(space_id: space_id).name
+    @guest_name = Request.guest_name_find(guest_id: guest_id)
   end
 
   def self.create(space_id:, guest_id:, check_in:, check_out:)
@@ -24,23 +26,29 @@ class Request
   def self.show_sent_requests(user_id:)
     result = DatabaseConnection.query("SELECT * FROM requests WHERE guest_id=#{user_id};")
     result.map do |request|
-        Request.new(request_id: request['request_id'], space_id: request['space_id'], guest_id: request['guest_id'], check_in: request['check_in'], check_out: request['check_out'], confirmed: request['confirmed'])
+      Request.new(request_id: request['request_id'], space_id: request['space_id'], guest_id: request['guest_id'], check_in: request['check_in'], check_out: request['check_out'], confirmed: request['confirmed'])
     end
   end
 
   def self.find_properties(user_id:)
-    result = DatabaseConnection.query("SELECT space_id FROM spaces WHERE user_id='#{user_id}';")
+    result = DatabaseConnection.query("SELECT * FROM spaces WHERE user_id='#{user_id}';")
     result.map do |property|
       property['space_id']
     end
   end
 
-
   def self.show_recieved_requests(user_id:)
     properties = Request.find_properties(user_id: user_id)
     properties.map do |property|
       result = DatabaseConnection.query("SELECT * FROM requests WHERE space_id=#{property};")
-      Request.new(request_id: result[0]['request_id'], space_id: result[0]['space_id'], guest_id: result[0]['guest_id'], check_in: result[0]['check_in'], check_out: result[0]['check_out'], confirmed: result[0]['confirmed'])
+      result.map do |request|
+        Request.new(request_id: request['request_id'], space_id: request['space_id'], guest_id: request['guest_id'], check_in: request['check_in'], check_out: request['check_out'], confirmed: request['confirmed'])
+      end
     end
+  end
+
+  def self.guest_name_find(guest_id:)
+    result = DatabaseConnection.query("SELECT username FROM users WHERE user_id='#{guest_id}';")
+    result[0]['username'].capitalize
   end
 end

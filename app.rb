@@ -99,6 +99,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/manage_bookings' do
+    @user = session[:user]
+    @send_requests = Request.show_sent_requests(user_id: @user.id)
+    @recieved_requests = Request.show_recieved_requests(user_id: @user.id)
     erb :manage_bookings
   end
 

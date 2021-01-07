@@ -1,9 +1,24 @@
-<h1>Kiki has requested Castle</h1>
+<h1>Hi <%=@user.username%>, manage your bookings</h1>
 
-<form action='/confirm_booking' method='post'>
-    <input type='submit' value='Confirm booking'>
-</form>
+<h3>Here are you're recieved bookings:</h3>
 
-<form action='/reject_booking' method='post'>
-    <input type='submit' value='Reject booking'>
-</form>
+  <ul>
+    <% @recieved_requests.each do |request| %>
+        <%request.each do |result|%>
+      <li><%= result.space_name%></li>
+      <li><%= result.guest_name%></li>
+      <li><%= result.check_in%></li>
+      <li><%= result.check_out%></li>
+      <li><%= result.confirmed%></li>
+      <form action='/confirm_booking' method='post'>
+      <input type='submit' value='Confirm booking'>
+      </form>
+
+      <form action='/reject_booking' method='post'>
+      <input type='submit' value='Reject booking'>
+      </form>
+      <br>
+      <%end%>
+    <% end %>
+  </ul>
+
