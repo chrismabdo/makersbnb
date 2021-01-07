@@ -34,9 +34,8 @@ class Request
     end
   end
 
-## add  " AND confirmed=true " to query string once confirmed and rejected features are working
   def check_date_availability(space_id:, checked_date:)
-    dates_query = DatabaseConnection.query("SELECT check_in, check_out FROM requests WHERE space_id='#{space_id}';")
+    dates_query = DatabaseConnection.query("SELECT check_in, check_out FROM requests WHERE space_id='#{space_id}' AND confirmed=TRUE;")
     result = dates_query.map do |range|
       if checked_date.between?((range['check_in']),(range['check_out'])) 
         false
