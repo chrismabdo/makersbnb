@@ -79,8 +79,17 @@ class MakersBnB < Sinatra::Base
     if session[:user]
       @user = session[:user].id
       session[:space] = Space.find(space_id: params[:space_id])
-      session[:current_request] = Request.create(space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out])
-      redirect '/confirm_request'
+      session[:current_request] = Request.new(request_id: '1', space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out], confirmed: false)
+      
+      # p session[:current_request]
+      # p session[:current_request].check_in
+      result = session[:current_request].check_full_availability(space_id: params[:space_id], check_in: params[:check_in], check_out: params[:check_out])
+
+      if result == true
+        redirect '/confirm_request'
+      else
+        redirect '/'
+      end
     else
       redirect '/'
     end
