@@ -77,6 +77,8 @@ class MakersBnB < Sinatra::Base
   post '/send_request' do
     if session[:user]
       @user = session[:user].id
+      @check_in = params[:check_in]
+      @check_out = params[:check_out]
       Space.request(params[:space_id], @user)
       session[:space] = Space.find(space_id: params[:space_id])
       redirect '/confirm_request'
@@ -85,9 +87,20 @@ class MakersBnB < Sinatra::Base
     end
   end
 
+  post '/confirm_request' do
+    @check_in = params[:check_in]
+    @check_out = params[:check_out]
+   
+    erb :confirm_request
+  end
+
   get '/confirm_request' do
+    @check_in = params[:check_in]
+    @check_out = params[:check_out]
+  
     @user = session[:user]
     @space = session[:space]
+
     erb :confirm_request
   end
 
