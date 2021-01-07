@@ -80,6 +80,7 @@ class MakersBnB < Sinatra::Base
       @check_in = params[:check_in]
       @check_out = params[:check_out]
       Space.request(params[:space_id], @user)
+      session[:space] = Space.find(space_id: params[:space_id])
       redirect '/confirm_request'
     else
       redirect '/'
@@ -96,7 +97,10 @@ class MakersBnB < Sinatra::Base
   get '/confirm_request' do
     @check_in = params[:check_in]
     @check_out = params[:check_out]
-   
+  
+    @user = session[:user]
+    @space = session[:space]
+
     erb :confirm_request
   end
 
@@ -105,4 +109,15 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/manage_bookings' do
+    erb :manage_bookings
+  end
+
+  post '/confirm_booking' do
+    redirect '/manage_bookings'
+  end
+
+  post '/reject_booking' do
+    redirect '/manage_bookings'
+  end
 end
