@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require './lib/space.rb'
 require './lib/user.rb'
+require './lib/request.rb'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
@@ -65,11 +66,11 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/listings' do
-    if session[:user]
-      @user = session[:user].username
-    else
-      @user = 'Stranger'
-    end
+    @user = if session[:user]
+              session[:user].username
+            else
+              'Stranger'
+            end
     @spaces = Space.show_listings
     erb :listings
   end
@@ -77,10 +78,8 @@ class MakersBnB < Sinatra::Base
   post '/send_request' do
     if session[:user]
       @user = session[:user].id
-      session[:check_in] = params[:check_in]
-      session[:check_out] = params[:check_out]
-      Space.request(params[:space_id], @user)
       session[:space] = Space.find(space_id: params[:space_id])
+      session[:current_request] = Request.create(space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out])
       redirect '/confirm_request'
     else
       redirect '/'
@@ -88,12 +87,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/confirm_request' do
-    @check_in = session[:check_in]
-    @check_out = session[:check_out]
-
     @user = session[:user]
     @space = session[:space]
-
+    @current_request = session[:current_request]
     erb :confirm_request
   end
 
