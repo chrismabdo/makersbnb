@@ -36,4 +36,48 @@ describe Request do
     expect(request.check_out).to eq '2021-03-07'
     expect(request.confirmed).to be_nil
   end
+
+  it 'returns the sent requests depending on the user' do
+    User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+    User.create(username: 'Chris', email: 'chris@example.com', password: 'password')
+    Space.new_listing('Cave', 'small cave', '£2.00', '1')
+    Space.new_listing('Big Cave', 'big cave', '£4.00', '2')
+    Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-01', check_out: '2021-03-07')
+    Request.create(space_id: '2', guest_id: '2', check_in: '2021-03-10', check_out: '2021-03-17')
+    Request.create(space_id: '1', guest_id: '1', check_in: '2021-03-21', check_out: '2021-03-27')
+
+    requests = Request.show_sent_requests(user_id: 2)
+
+    expect(requests.length).to eq 2
+    expect(requests[0].check_in).to eq '2021-03-01'
+    expect(requests[1].check_out).to eq '2021-03-17'
+  end
+
+  it 'finds all properties with same owner' do
+    User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+    Space.new_listing('Cave', 'small cave', '£2.00', '1')
+    Space.new_listing('Castle', 'small castle', '£20.00', '1')
+
+    find_properties = Request.find_properties(user_id: 1)
+
+    expect(find_properties).to eq ["1", "2"]
+  end
+
+  it 'returns the recieved requests depending on the user' do
+    User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+    User.create(username: 'Chris', email: 'chris@example.com', password: 'password')
+    Space.new_listing('Cave', 'small cave', '£2.00', '1')
+    Space.new_listing('Big Cave', 'big cave', '£4.00', '2')
+    Space.new_listing('Castle', 'small castle', '£20.00', '1')
+    Space.new_listing('Big Castle', 'big castle', '£40.00', '2')
+    Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-01', check_out: '2021-03-07')
+    Request.create(space_id: '2', guest_id: '2', check_in: '2021-03-10', check_out: '2021-03-17')
+    Request.create(space_id: '3', guest_id: '1', check_in: '2021-03-21', check_out: '2021-03-27')
+
+    requests = Request.show_recieved_requests(user_id: 1)
+
+    expect(requests.length).to eq 2
+    expect(requests[0].check_in).to eq '2021-03-01'
+    expect(requests[1].check_out).to eq '2021-03-27'
+  end
 end
