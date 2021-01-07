@@ -25,4 +25,20 @@ class Request
   #     result.map do |requests|
   #         requests =
   #   end
+
+  def check_availability(space_id:, checked_date:)
+    dates_query = DatabaseConnection.query("SELECT check_in, check_out FROM requests WHERE space_id=#{space_id};")
+    result = dates_query.map do |range|
+      if checked_date.between?((range['check_in']),(range['check_out'])) 
+        false
+      else 
+        true
+      end
+    end
+    if result.include? false
+      false
+    else
+      true
+    end
+  end
 end

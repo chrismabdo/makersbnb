@@ -36,4 +36,19 @@ describe Request do
     expect(request.check_out).to eq '2021-03-07'
     expect(request.confirmed).to be_nil
   end
+
+  describe 'method: check_availablilty' do
+    it 'checks your requested dates and tells you if they are avaliable or not' do
+    User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+    User.create(username: 'Chris', email: 'chris@example.com', password: 'password')
+    Space.new_listing('Cave', 'small cave', '£2.00', '1')
+    Space.new_listing('Big Cave', 'big cave', '£4.00', '2')
+    request = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-01', check_out: '2021-03-07')
+    request_clash = Request.create(space_id: '1', guest_id: '1', check_in: '2021-03-09', check_out: '2021-03-14')
+    request_checking = Request.create(space_id: '1', guest_id: '2', check_in: '2021-03-13', check_out: '2021-03-17')
+
+    expect(request_checking.check_availability(space_id: '1', checked_date: '2021-03-13')).to eq false
+    expect(request_checking.check_availability(space_id: '1', checked_date: '2021-03-20')).to eq true
+    end
+  end
 end
