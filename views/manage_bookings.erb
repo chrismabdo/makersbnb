@@ -1,9 +1,69 @@
-<h1>Kiki has requested Castle</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="makersbnbstyle.css">
+</head>
+<body>
 
-<form action='/confirm_booking' method='post'>
-    <input type='submit' value='Confirm booking'>
-</form>
+<h1>Hi <%=@user.username%>, manage your bookings</h1>
 
-<form action='/reject_booking' method='post'>
-    <input type='submit' value='Reject booking'>
-</form>
+<h3>Here are your recieved bookings:</h3>
+
+  <ul>
+    <% @recieved_requests.each do |request| %>
+      <%request.each do |result|%>
+        <li><%= result.space_name%></li>
+        <li><%= result.guest_name%></li>
+        <li><%= result.check_in%></li>
+        <li><%= result.check_out%></li>
+        <li>
+          <% if result.confirmed == 't'%>
+            This booking has been confirmed
+          <% elsif result.confirmed == 'f' %>
+            This booking has been rejected
+          <% else %>
+            Confirmation pending
+          <% end %>
+        </li>
+
+        <form action='/confirm_booking' method='post'>
+          <input type='hidden' name='request_id' value="<%= result.request_id %>">
+          <input type='submit' value='Confirm booking'>
+        </form>
+
+        <form action='/reject_booking' method='post'>
+          <input type='hidden' name='request_id' value="<%= result.request_id %>">
+          <input type='submit' value='Reject booking'>
+        </form>
+        <br>
+      <%end%>
+    <% end %>
+  </ul>
+
+  <h3>Here are your sent bookings:</h3>
+
+    <ul>
+      <% @sent_requests.each do |request| %>
+        <li><%= request.space_name%></li>
+        <li><%= request.check_in%></li>
+        <li><%= request.check_out%></li>
+        <li>
+          <% if request.confirmed == 't'%>
+            This booking has been confirmed
+          <% elsif request.confirmed == 'f' %>
+            This booking has been rejected
+          <% else %>
+            Confirmation pending
+          <% end %>
+        </li>
+        <form action='/cancel_booking' method='post'>
+          <input type='hidden' name='request_id' value="<%= request.request_id %>">
+          <input type='submit' value='Cancel booking'>
+        </form>
+        <br>
+      <%end%>
+    </ul>
+
+
+</body>
+</html>
