@@ -19,7 +19,7 @@ class Space
   def self.show_listings
     result = DatabaseConnection.query('SELECT * FROM spaces;')
     result.map do |space|
-      space = Space.new(id: space['space_id'], name: space['name'], description: space['description'], price: space['price'], user_id: space['user_id'])
+      Space.new(id: space['space_id'], name: space['name'], description: space['description'], price: space['price'], user_id: space['user_id'])
     end
   end
 
