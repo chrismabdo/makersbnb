@@ -28,15 +28,10 @@ class MakersBnB < Sinatra::Base
   post '/login_details' do
     if User.check_password(login_email: params[:login_email], login_password: params[:login_password])
       session[:user] = User.find(email: params[:login_email])
-      redirect '/logged_in'
+      redirect '/listings'
     else
       redirect '/login_failure'
     end
-  end
-
-  get '/logged_in' do
-    @user = session[:user]
-    erb :homepage
   end
 
   get '/login_failure' do
@@ -56,7 +51,7 @@ class MakersBnB < Sinatra::Base
       erb :'add-listing'
     else
       redirect '/'
-    end 
+    end
   end
 
   post '/add-listing' do
@@ -66,10 +61,10 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/listings' do
-    @user = if session[:user]
-      session[:user].username
+    if session[:user]
+      @user = session[:user].username
     else
-      'Stranger'
+      @user = 'Stranger'
     end
     @spaces = Space.show_listings
     erb :listings
@@ -80,7 +75,7 @@ class MakersBnB < Sinatra::Base
       @user = session[:user].id
       session[:space] = Space.find(space_id: params[:space_id])
       session[:current_request] = Request.create(space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out], confirmed: false)
-      
+
       result = session[:current_request].check_full_availability(space_id: params[:space_id], check_in: params[:check_in], check_out: params[:check_out])
 
       if result == true
