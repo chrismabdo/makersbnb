@@ -81,8 +81,6 @@ class MakersBnB < Sinatra::Base
       session[:space] = Space.find(space_id: params[:space_id])
       session[:current_request] = Request.create(space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out], confirmed: false)
       
-      # p session[:current_request]
-      # p session[:current_request].check_in
       result = session[:current_request].check_full_availability(space_id: params[:space_id], check_in: params[:check_in], check_out: params[:check_out])
 
       if result == true
