@@ -4,10 +4,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    padding-top: 200px;
-    padding-right: 700px;
-    padding-bottom: 200px;
-    padding-left: 700px;
 }
 
 h1 {
@@ -129,4 +125,67 @@ input[type=text] {
 
 .listings input[type="radio"]:checked+label {
     background-color: #76cf9f;
+}
+
+.recieved-bookings {
+    background-color: #6b6a6a83;
+    background-size: auto;
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    border-radius: 75px;
+    font-family: 'Monserrat';
+    font-size:15px;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.sent-bookings {
+    background-color: #6b6a6a83;
+    background-size: auto;
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    border-radius: 75px;
+    font-family: 'Monserrat';
+    font-size:15px;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.rb {
+    background-color: #6b6a6a83;
+}
+
+.sb {
+    background-color: #6b6a6a83;
+}
+
+.homepage {
+    padding-top: 200px;
+    padding-right: 700px;
+    padding-bottom: 200px;
+    padding-left: 700px;
+}
+
+.manage-bookings {
+    padding-top: 200px;
+    padding-right: 600px;
+    padding-bottom: 200px;
+    padding-left: 600px;
+}
+
+.listings-page {
+    padding-top: 200px;
+    padding-right: 700px;
+    padding-bottom: 200px;
+    padding-left: 700px;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    font-family: 'Monserrat';
+    font-size 10;px;
 }

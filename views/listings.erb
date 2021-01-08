@@ -22,7 +22,10 @@
             <div class='listing_name' style='float:left'>
               <h2><%= space.name %></h2>
             </div>
+            <div class='radio-button' style='float:right'>
             <input type="radio" id="<%= space.id %>" name="space_id" value="<%= space.id %>">
+            </div>
+
             <div class='description_and_price' style='float:center'>
               <h5>Description:</b> <%= space.description %></h5>
               <h5>Price per night:</b> <%= space.price %></h5>
