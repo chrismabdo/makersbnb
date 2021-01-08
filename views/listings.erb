@@ -2,6 +2,8 @@
 <html>
 <head>
 <link rel="stylesheet" href="makersbnbstyle.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monserrat">
 </head>
 <body>
 
@@ -41,6 +43,56 @@
 <input type='submit' value='Manage Bookings'>
 </form>
 
+<div>
+
+  <div>
+    <h1>Welcome To The Booking Page</h1>
+  </div>
+    <div class='all_listings'>
+    <form action='/send_request' method='post'>
+      <ul>
+        <% @spaces.each do |space| %>
+        <div class='listings-button'>
+        <input type="radio" id="<%= space.id %>" name="space_id" value="<%= space.id %>">
+        <label for="<%= space.id %>">
+          <div class='listings'>
+            <div class='listing_name' style='float:left'>
+              <h2><%= space.name %></h2>
+            </div>
+            <div class='description_and_price' style='float:center'>
+              <h5>Description:</b> <%= space.description %></h5>
+              <h5>Price per night:</b> <%= space.price %></h5>
+            </div>
+          </div>
+        </label> 
+        </div>
+        <br>
+        <% end %>
+      </ul>
+      </div>
+      Check In:
+      <input type='date' name='check_in'>
+      Check Out:
+      <input type='date' name='check_out'>
+      <input type='submit' value='Request Listing'>
+    </form>
+
+  <form action='/add-listing'>
+    <input type='submit' value='Add New Listing'>
+  </form>
+
+  <form action='/log-out' method="post">
+    <input type='submit' value='Log Out'>
+  </form>
+
+  <form action='/'>
+  <input type='submit' value='Take me home, country roads!'>
+  </form>
+
+  <form action='/manage_bookings'>
+  <input type='submit' value='Manage Bookings'>
+  </form>
+</div>
 
 </body>
 </html>
