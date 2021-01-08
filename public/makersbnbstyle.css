@@ -157,10 +157,12 @@ input[type=text] {
 
 .rb {
     background-color: #6b6a6a83;
+    border-radius: 25px 75px;
 }
 
 .sb {
     background-color: #6b6a6a83;
+    border-radius: 25px 75px;
 }
 
 .homepage {
