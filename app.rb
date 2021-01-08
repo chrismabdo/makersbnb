@@ -56,7 +56,7 @@ class MakersBnB < Sinatra::Base
       erb :'add-listing'
     else
       redirect '/'
-    end
+    end 
   end
 
   post '/add-listing' do
@@ -67,10 +67,10 @@ class MakersBnB < Sinatra::Base
 
   get '/listings' do
     @user = if session[:user]
-              session[:user].username
-            else
-              'Stranger'
-            end
+      session[:user].username
+    else
+      'Stranger'
+    end
     @spaces = Space.show_listings
     erb :listings
   end
@@ -79,11 +79,22 @@ class MakersBnB < Sinatra::Base
     if session[:user]
       @user = session[:user].id
       session[:space] = Space.find(space_id: params[:space_id])
-      session[:current_request] = Request.create(space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out])
-      redirect '/confirm_request'
+      session[:current_request] = Request.create(space_id: params[:space_id], guest_id: @user, check_in: params[:check_in], check_out: params[:check_out], confirmed: false)
+      
+      result = session[:current_request].check_full_availability(space_id: params[:space_id], check_in: params[:check_in], check_out: params[:check_out])
+
+      if result == true
+        redirect '/confirm_request'
+      else
+        redirect '/dates_unavailable'
+      end
     else
       redirect '/'
     end
+  end
+
+  get '/dates_unavailable' do
+    erb :dates_unavailable
   end
 
   get '/confirm_request' do

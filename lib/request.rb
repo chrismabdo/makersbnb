@@ -18,9 +18,33 @@ class Request
     @guest_name = Request.guest_name_find(guest_id: guest_id)
   end
 
-  def self.create(space_id:, guest_id:, check_in:, check_out:)
+  def self.create(space_id:, guest_id:, check_in:, check_out:, confirmed: false)
     request = DatabaseConnection.query("INSERT INTO requests (space_id, guest_id, check_in, check_out) VALUES ('#{space_id}', '#{guest_id}', '#{check_in}', '#{check_out}') RETURNING request_id, space_id, guest_id, check_in, check_out, confirmed;")
     Request.new(request_id: request[0]['request_id'], space_id: request[0]['space_id'], guest_id: request[0]['guest_id'], check_in: request[0]['check_in'], check_out: request[0]['check_out'], confirmed: request[0]['confirmed'])
+  end
+
+  def check_full_availability(space_id:, check_in:, check_out:)
+    if (check_date_availability(space_id: space_id, checked_date: check_in) == true) && (check_date_availability(space_id: space_id, checked_date: check_out) == true)
+     true
+    else
+      false
+    end
+  end
+
+  def check_date_availability(space_id:, checked_date:)
+    dates_query = DatabaseConnection.query("SELECT check_in, check_out FROM requests WHERE space_id='#{space_id}' AND confirmed=TRUE;")
+    result = dates_query.map do |range|
+      if checked_date.between?((range['check_in']),(range['check_out'])) == true
+        false
+      else 
+        true
+      end
+    end
+    if result.include? false
+      false
+    else
+      true
+    end
   end
 
   def self.show_sent_requests(user_id:)
@@ -63,4 +87,5 @@ class Request
   def self.cancel(request_id:)
     DatabaseConnection.query("DELETE FROM requests WHERE request_id='#{request_id}';")
   end
+
 end
