@@ -53,7 +53,7 @@ describe Request do
     end
 
     it 'checks the whole availability for both check in and check out' do
-      User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
+    User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
     User.create(username: 'Chris', email: 'chris@example.com', password: 'password')
     Space.new_listing('Cave', 'small cave', '£2.00', '1')
     Space.new_listing('Big Cave', 'big cave', '£4.00', '2')
@@ -82,7 +82,7 @@ describe Request do
     expect(requests.length).to eq 2
     expect(requests[0].check_in).to eq '2021-03-01'
     expect(requests[1].check_out).to eq '2021-03-17'
-  end
+    end
 
   it 'finds all properties with same owner' do
     User.create(username: 'AJ', email: 'aj@example.com', password: 'password')
@@ -153,5 +153,5 @@ describe Request do
 
     expect(show_request[0][0]).to be_nil
   end
-
+end
 end
