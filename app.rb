@@ -20,10 +20,10 @@ class MakersBnB < Sinatra::Base
       redirect '/user_exists'
     end
   end
-
-  get '/login' do
-    erb :login
-  end
+  #
+  # get '/login' do
+  #   erb :login
+  # end
 
   post '/login_details' do
     if User.check_password(login_email: params[:login_email], login_password: params[:login_password])
