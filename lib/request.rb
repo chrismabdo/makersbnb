@@ -36,7 +36,7 @@ class Request
     result = dates_query.map do |range|
       if checked_date.between?((range['check_in']),(range['check_out'])) == true
         false
-      else 
+      else
         true
       end
     end
@@ -62,9 +62,9 @@ class Request
   end
 
   def self.show_recieved_requests(user_id:)
-    properties = Request.find_properties(user_id: user_id)
-    properties.map do |property|
-      result = DatabaseConnection.query("SELECT * FROM requests WHERE space_id=#{property};")
+    owned_spaces = Request.find_properties(user_id: user_id)
+    owned_spaces.map do |space|
+      result = DatabaseConnection.query("SELECT * FROM requests WHERE space_id=#{space};")
       result.map do |request|
         Request.new(request_id: request['request_id'], space_id: request['space_id'], guest_id: request['guest_id'], check_in: request['check_in'], check_out: request['check_out'], confirmed: request['confirmed'])
       end

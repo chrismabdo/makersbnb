@@ -6,6 +6,43 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monserrat">
 </head>
 <body>
+
+<h1>Welcome To The Booking Page, <%= @user %></h1>
+
+<form action='/send_request' method='post'>
+  <ul>
+    <% @spaces.each do |space| %>
+      <label for="<%= space.id %>"><b><%= space.name %></b></label>
+      <input type="radio" id="<%= space.id %>" name="space_id" value="<%= space.id %>">
+      <li><b>Description:</b> <%= space.description %></li>
+      <li><b>Price per night:</b> <%= space.price %></li>
+      <br>
+    <% end %>
+  </ul>
+  Check In:
+  <input type='date' name='check_in'>
+  Check Out:
+  <input type='date' name='check_out'>
+  <input type='submit' value='Request Listing'>
+</form>
+
+
+<form action='/add-listing'>
+  <input type='submit' value='Add New Listing'>
+</form>
+
+<form action='/log-out' method="post">
+  <input type='submit' value='Log Out'>
+</form>
+
+<form action='/'>
+<input type='submit' value='Take me home, country roads!'>
+</form>
+
+<form action='/manage_bookings'>
+<input type='submit' value='Manage Bookings'>
+</form>
+
 <div>
 
   <div>

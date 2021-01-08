@@ -12,10 +12,10 @@
   <ul>
     <% @recieved_requests.each do |request| %>
       <%request.each do |result|%>
-        <li><%= result.space_name%></li>
-        <li><%= result.guest_name%></li>
-        <li><%= result.check_in%></li>
-        <li><%= result.check_out%></li>
+        <li><b>Space Name:</b> <%= result.space_name%></li>
+        <li><b>Guest Name:</b> <%= result.guest_name%></li>
+        <li><b>Check-in Date:</b> <%= result.check_in%></li>
+        <li><b>Check-out Date:</b> <%= result.check_out%></li>
         <li>
           <% if result.confirmed == 't'%>
             This booking has been confirmed
@@ -23,18 +23,17 @@
             This booking has been rejected
           <% else %>
             Confirmation pending
+            <form action='/confirm_booking' method='post'>
+              <input type='hidden' name='request_id' value="<%= result.request_id %>">
+              <input type='submit' value='Confirm booking'>
+            </form>
+
+            <form action='/reject_booking' method='post'>
+              <input type='hidden' name='request_id' value="<%= result.request_id %>">
+              <input type='submit' value='Reject booking'>
+            </form>
           <% end %>
         </li>
-
-        <form action='/confirm_booking' method='post'>
-          <input type='hidden' name='request_id' value="<%= result.request_id %>">
-          <input type='submit' value='Confirm booking'>
-        </form>
-
-        <form action='/reject_booking' method='post'>
-          <input type='hidden' name='request_id' value="<%= result.request_id %>">
-          <input type='submit' value='Reject booking'>
-        </form>
         <br>
       <%end%>
     <% end %>
@@ -42,28 +41,31 @@
 
   <h3>Here are your sent bookings:</h3>
 
-    <ul>
-      <% @sent_requests.each do |request| %>
-        <li><%= request.space_name%></li>
-        <li><%= request.check_in%></li>
-        <li><%= request.check_out%></li>
-        <li>
-          <% if request.confirmed == 't'%>
-            This booking has been confirmed
-          <% elsif request.confirmed == 'f' %>
-            This booking has been rejected
-          <% else %>
-            Confirmation pending
-          <% end %>
-        </li>
-        <form action='/cancel_booking' method='post'>
-          <input type='hidden' name='request_id' value="<%= request.request_id %>">
-          <input type='submit' value='Cancel booking'>
-        </form>
-        <br>
-      <%end%>
-    </ul>
+  <ul>
+    <% @sent_requests.each do |request| %>
+      <li><b>Space Name:</b> <%= request.space_name%></li>
+      <li><b>Check-in Date:</b> <%= request.check_in%></li>
+      <li><b>Check-out Date:</b> <%= request.check_out%></li>
+      <li>
+        <% if request.confirmed == 't'%>
+          This booking has been confirmed
+        <% elsif request.confirmed == 'f' %>
+          This booking has been rejected
+        <% else %>
+          Confirmation pending
+        <% end %>
+      </li>
+      <form action='/cancel_booking' method='post'>
+        <input type='hidden' name='request_id' value="<%= request.request_id %>">
+        <input type='submit' value='Cancel booking'>
+      </form>
+      <br>
+    <% end %>
+  </ul>
 
+  <form action='/listings'>
+    <input type='submit' value='Book More Spaces'>
+  </form>
 
 </body>
 </html>
