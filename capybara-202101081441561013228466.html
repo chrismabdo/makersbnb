@@ -10,26 +10,48 @@
 <div>
 
   <div>
-    <h1>Welcome To The Booking Page, <%= @user %> </h1>
+    <h1>Welcome To The Booking Page, Kiki </h1>
   </div>
+    <div class='all_listings'>
     <form action='/send_request' method='post'>
-        <% @spaces.each do |space| %>
-
-        <label for="<%= space.id %>">
+      <ul>
+        
+        <div class='listings-button'>
+        <label for="1">
           <div class='listings'>
             <div class='listing_name' style='float:left'>
-              <h2><%= space.name %></h2>
+              <h2>Castle</h2>
             </div>
-            <input type="radio" id="<%= space.id %>" name="space_id" value="<%= space.id %>">
+            <input type="radio" id="1" name="space_id" value="1">
             <div class='description_and_price' style='float:center'>
-              <h5>Description: <%= space.description %></h5>
-              <h5>Price per night: <%= space.price %></h5>
+              <h5>Description:</b> modest castle on hill</h5>
+              <h5>Price per night:</b> £50.00</h5>
             </div>
           </div>
         </label>
+        </div>
         <br>
+        </div>
+        
+        <div class='listings-button'>
+        <label for="2">
+          <div class='listings'>
+            <div class='listing_name' style='float:left'>
+              <h2>Cave</h2>
+            </div>
+            <input type="radio" id="2" name="space_id" value="2">
+            <div class='description_and_price' style='float:center'>
+              <h5>Description:</b> Dark, damp, and horrible cave</h5>
+              <h5>Price per night:</b> £5.00</h5>
+            </div>
+          </div>
+        </label>
+        </div>
+        <br>
+        </div>
+        
+      </ul>
 
-        <% end %>
       Check In:
       <input type='date' name='check_in'>
       Check Out:
